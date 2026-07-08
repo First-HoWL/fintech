@@ -46,7 +46,7 @@ def task():
             except Exception as e:
                 print(f"Помилка при запиті до API {api}/api/get_apis: {e}")
                 
-        time.sleep(delay)
+        time.sleep(delay / 1000)
 
 @app.route("/")
 def hello_world():
