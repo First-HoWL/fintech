@@ -39,12 +39,12 @@ def task():
             try:
                 node.request_chain(api)
             except Exception as e:
-                print(f"Помилка при запиті до API {api}: {e}")
+                print(f"Помилка при запиті до API {api}/api/chain: {e}")
             
             try:
                 node.request_apis(api)
             except Exception as e:
-                print(f"Помилка при запиті до API {api}: {e}")
+                print(f"Помилка при запиті до API {api}/api/get_apis: {e}")
                 
         time.sleep(delay)
 

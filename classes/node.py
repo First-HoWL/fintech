@@ -40,8 +40,8 @@ class Node:
         
         data = response.json()
         received_blockchein = Blockchain()
-        received_blockchein.difficulty = self.blockchain.difficulty
-        received_blockchein.chain = [Block.from_dict(d) for d in data['chain']]
+        received_blockchein.difficulty = data['chain']['difficulty']
+        received_blockchein.chain = [Block.from_dict(d) for d in data['chain']['chain']]
         self.post_chain(received_blockchein)
     
     def request_apis(self, api):
