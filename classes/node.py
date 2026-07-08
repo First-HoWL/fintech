@@ -44,7 +44,7 @@ class Node:
         self.post_chain(received_blockchein)
     
     def request_apis(self, api):
-        response = request.get(f'{api}/api/apis')
+        response = request.get(f'{api}/api/get_apis')
         if response.status_code != 200:
             print(f'Error requesting apis from {api}: {response.status_code}')
             return
