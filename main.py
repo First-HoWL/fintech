@@ -61,7 +61,7 @@ def get_apis():
 
 @app.route("/api/chain", methods=["GET"])
 def get_chain():
-    return jsonify({'chain': node.blockchain})
+    return jsonify({'chain': node.blockchain.to_dict()})
 
 def main():
     app.run(debug=True, host="0.0.0.0", port=port)

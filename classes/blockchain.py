@@ -38,6 +38,12 @@ class Blockchain:
                 return False
         return True
 
+    def to_dict(self):
+        return {
+            "difficulty": self.difficulty,
+            "chain": [block.to_dict() for block in self.chain]
+        }
+
     def print_chain(self):
         for block in self.chain:
             print(block)
