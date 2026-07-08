@@ -13,15 +13,16 @@ class Node:
         return self.blockchain
     
     def post_chain(self, chain):
-        if self.blockchain.chain.__len__() >= chain.chain.__len__():
+        if len(self.blockchain.chain) >= len(chain.chain):
             pass
         elif not self.blockchain.chain.is_chain_valid():
             print(f'{self.name} received an invalid chain')
             if chain.is_chain_valid():
                 self.blockchain = chain
         else:
-            self.blockchain = chain
-            print(f'{self.name} received a valid chain (length: {chain.chain.__len__()} blocks)')
+            if chain.is_chain_valid():
+                self.blockchain = chain
+                print(f'{self.name} received a valid chain (length: {chain.chain.__len__()} blocks)')
     
     def get_apis(self):
         return self.apis
