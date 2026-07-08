@@ -15,7 +15,7 @@ class Node:
     def post_chain(self, chain):
         if len(self.blockchain.chain) >= len(chain.chain):
             pass
-        elif not self.blockchain.chain.is_chain_valid():
+        elif not self.blockchain.is_chain_valid():
             print(f'{self.name} received an invalid chain')
             if chain.is_chain_valid():
                 self.blockchain = chain
